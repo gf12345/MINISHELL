@@ -2,6 +2,7 @@
 #include<unistd.h>
 #include<stdlib.h>
 #include <sys/wait.h>
+#include<string.h>
 int main()
 {
   while(1){
@@ -22,6 +23,10 @@ int main()
         *ptr='\0';
       }
       ptr++;
+    }
+    if(strcmp(argv[0],"cd")==0){
+      chdir(argv[1]);
+      continue;
     }
     //for(int j=0;j<i;j++){
     // printf("%s ",argv[j]);
